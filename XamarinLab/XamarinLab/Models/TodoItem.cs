@@ -10,5 +10,7 @@ namespace XamarinLab.Models
         public string Name { get; set; }
         public string Notes { get; set; }
         public bool Done { get; set; }
+
+        public string TextDecorations { get; set; }
     }
 }

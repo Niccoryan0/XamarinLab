@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinLab.Models;
 
+
 namespace XamarinLab
 {
     public partial class MainPage : ContentPage
@@ -27,42 +28,33 @@ namespace XamarinLab
             {
                 new TodoItem
                 {
-                    Name = "test",
-                    Notes = "testing",
-                    Done = false
+                    Name = "Nicco",
+                    Notes = "Ryan"
                 },
                 new TodoItem
                 {
-                    Name = "test2",
-                    Notes = "testing2",
-                    Done = false
+                    Name = "Yasir",
+                    Notes = "Mohamud"
                 },
                 new TodoItem
                 {
-                    Name = "test3",
-                    Notes = "testing3",
-                    Done = false
+                    Name = "Peyton",
+                    Notes = "Cysewski"
                 }
 
             };
         }
 
-        async void OnItemAdded(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MainPage
-            {
-                BindingContext = new TodoItem()
-            });
-        }
-
         private void ViewCell_Tapped(object sender, EventArgs e)
         {
             var viewCell = (ViewCell)sender;
+            
             if (viewCell.View != null)
             {
-                if (viewCell.View.BackgroundColor == Color.Red) viewCell.View.BackgroundColor = Color.Transparent;
+                if (viewCell.View.BackgroundColor == Color.Gray) viewCell.View.BackgroundColor = Color.Transparent;
 
-                else viewCell.View.BackgroundColor = Color.Red;
+                else viewCell.View.BackgroundColor = Color.Gray;
+                
 
                 selectedCell = viewCell;
             }

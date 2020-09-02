@@ -4,17 +4,41 @@
              x:Class="XamarinLab.MainPage"
              Title="Main">
 
-    <ListView x:Name="listView" Margin="20">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell Tapped="ViewCell_Tapped">
-                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                        <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout>
+        <Label Text="Xamarin Test App" HorizontalOptions="Center" />
+
+        <ListView x:Name="listView" Margin="20">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                       HorizontalTextAlignment="Center"
+                       Text="Xamarin Test App"
+                       TextColor="Blue"
+                       BackgroundColor="Orange" 
+                       Margin="0,0,20,0" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="ViewCell_Tapped" ClassId="{Binding Name}">
+                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                            <Label x:Name="{Binding Name}" Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                       HorizontalTextAlignment="Center"
+                       Text="Footer"
+                       TextColor="Blue"
+                       BackgroundColor="Orange"     
+                       Margin="20,0,0,0" />
+                </StackLayout>
+            </ListView.Footer>
+        </ListView>
+        
+    </StackLayout>
 
 </ContentPage>
